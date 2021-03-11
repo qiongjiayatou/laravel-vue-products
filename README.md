@@ -1,29 +1,36 @@
-## Тестовое задание CBONDS, вакансия PHP-программист (Full stack) 
+# Simple CRUD Laravel + VueJS
 
-<p>
-    Существует таблица products полями id, name, priсе. Необходимо реализовать ее отображение со следующим функционалом:
-</p>
+Displaying products list with pagination, adding new products, editing or deleting existing ones.
 
-<ul>
-    <li>Фильтрация по полю name</li>
-    <li>Пагинация по 25 записей на странице</li>
-    <li>Добавление новой записи</li>
-    <li>Редактирование записи</li>
-    <li>Удаление записи</li>
-</ul>
+## Installation
 
-<p>
-    Вывод данных и выполнение операций необходимо осуществлять без перезагрузки страницы с использованием vue.js.
-</p>
+0. Copy .env.example and rename to .env
 
-<p>
-    Необходимая модель Product и миграция с фабрикой уже созданы. Используемая база данных не имеет значения (можно использовать как mysql так и sqlite).
-</p>
+1. Install all dependencies
+```
+    composer install
+    npm install
+    npm run dev
+```
 
-<p>
-    Также уже создан контроллер TestController, где можно размещать необходимый функционал. Необходимо создать сервисный слой и организовать валидацию данных.
-</p>
+2. Generate a fresh key for application
+```
+    php artisan key:generate
+```
 
-<p>
-    Полученный результ можно прислать архивом по почте, выложить в облако или в своем репозитории.
-</p>
+3. Add database credentials to .env file
+    (If needed add this to register method of your AppServiceProvider)
+```
+    Schema::defaultStringLength(191);
+```
+
+4. Migrate databases
+```
+    php artisan migrate --seed
+```
+
+5. Run application
+```
+    php artisan serve
+```
+
